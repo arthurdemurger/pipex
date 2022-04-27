@@ -1,0 +1,5 @@
+infile
+outfile
+a.out
+*.swp
+.DS_Store

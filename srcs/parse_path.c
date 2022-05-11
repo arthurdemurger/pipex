@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:23:31 by ademurge          #+#    #+#             */
-/*   Updated: 2022/05/11 20:06:58 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/05/11 23:15:55 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,5 @@ void parse(t_arg *args)
 		if (line_path)
 			break;
 	}
+	args->split_path = ft_split(line_path, ':');
 }

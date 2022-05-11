@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 17:06:27 by ademurge          #+#    #+#             */
-/*   Updated: 2022/05/11 18:22:36 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/05/11 22:26:46 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	error(char *type)
 {
-	perror(type);
+	if (type)
+		perror(type);
 	exit(1);
 }

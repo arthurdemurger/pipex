@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 16:51:52 by ademurge          #+#    #+#             */
-/*   Updated: 2022/05/11 19:44:30 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/05/11 22:38:05 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@
 
 typedef struct s_arg
 {
-	char	*cmd_1;
-	char	*cmd_2;
+	char	**cmd_1;
+	char	**cmd_2;
 	char	**env;
 	int		fd_1;
 	int		fd_2;
 	int		pipe[2];
 	pid_t	pid;
-	char	*line;
+	char	**split_path;
 }	t_arg;
 
 /*

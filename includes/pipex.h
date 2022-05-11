@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 16:51:52 by ademurge          #+#    #+#             */
-/*   Updated: 2022/05/11 17:13:48 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/05/11 19:44:30 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ typedef struct s_arg
 	int		fd_1;
 	int		fd_2;
 	int		pipe[2];
+	pid_t	pid;
+	char	*line;
 }	t_arg;
 
 /*
@@ -55,7 +57,21 @@ typedef struct s_arg
 */
 
 void	error(char *type);
-void	init_struct(t_arg *args, char **av, char **envp, int pipe_fd[2]);
-void	pipex(t_arg *args, char **av, char **envp);
+void	init_struct(t_arg *args, char **av, char **envp);
+void	pipex(t_arg *args);
+void 	parse(t_arg *args);
+
+/*
+** Libft functions
+*/
+
+char	**ft_split(char const *s, char c);
+char	*ft_strdup(char *src);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlcat(char *dest, const char *src, size_t size);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+size_t	ft_strlen(const char *s);
+char	*ft_strstr(char *str, char *to_find);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

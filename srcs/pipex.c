@@ -6,39 +6,35 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 16:54:37 by ademurge          #+#    #+#             */
-/*   Updated: 2022/05/11 17:11:49 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/05/11 17:16:22 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
 
-static int	first_cmd(t_arg *args, int fd, char *cmd)
+static void	first_cmd(t_arg *args, int fd, char *cmd)
 {
 	if (dup2(fd, STDIN_FILENO) < 0 || dup2(args->pipe[1], STDOUT_FILENO) < 0)
 		error(DUP2_ERROR);
 	close(args->pipe[1]);
 	close(fd);
 	// EXECVE
-	return (1);
 }
 
-static int	second_cmd(t_arg *args, int fd, char *cmd)
+static void	second_cmd(t_arg *args, int fd, char *cmd)
 {
 	if (dup2(args->pipe[0], STDIN_FILENO) < 0 || dup2(fd, STDOUT_FILENO) < 0)
-		return (DUP2_ERROR);
+		error(DUP2_ERROR);
 	close(args->pipe[0]);
 	close(fd);
 	// EXECVE
-	return (1);
 }
 
 void	pipex(t_arg *args, char **av, char **envp)
 {
-	int		ret_value;
 	int		pipe_fd[2];
 	pid_t	id;
 
-	ret_value = 1;
 	if ((pipe(pipe_fd)) == -1)
 		error(PIPE_ERROR);
 	init_struct(args, av, envp, pipe_fd);

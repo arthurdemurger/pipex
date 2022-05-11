@@ -3,3 +3,4 @@ outfile
 a.out
 *.swp
 .DS_Store
+test.c

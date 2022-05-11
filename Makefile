@@ -6,28 +6,24 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 22:21:01 by ademurge          #+#    #+#              #
-#    Updated: 2022/04/27 17:39:29 by ademurge         ###   ########.fr        #
+#    Updated: 2022/05/11 16:37:27 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= 	pipex.c
+SRCS			= 	init.c \
+					main.c \
+					pipex.c
 
-OBJS			= $(addprefix srcs/, ${SRCS:.c=.o})
+OBJS			= $(addprefix srcs/, ${SRCS})
 
 NAME			= pipex
 
 CFLAGS			= -Wall -Wextra -Werror
 
-%o:				%c
-				@gcc ${CFLAGS} -I./includes -c $< -o ${<:.c=.o}
-
-$(NAME):		${OBJS}
-				@echo "...Everything compiled!"
-
-all:			$(NAME)
-
+all:
+				@gcc ${CFLAGS} ${OBJS} -o ${NAME}
 clean:
-				@rm -f ${OBJS} $(BONUS_OBJS)
+				@rm -f ${OBJS}
 
 fclean:			clean
 				@rm -f $(NAME)

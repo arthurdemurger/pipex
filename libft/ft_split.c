@@ -6,17 +6,18 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 18:23:28 by ademurge          #+#    #+#             */
-/*   Updated: 2022/05/11 18:41:46 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/05/12 16:18:39 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
 
-static char	**ft_free(int index, char **split)
+static char	**ft_free(int index, char **split, t_arg *args)
 {
 	while (--index)
 		free(split[index]);
 	free(split);
+	pipex_error("Malloc error", 0, args);
 	return (NULL);
 }
 
@@ -41,7 +42,7 @@ static int	count_words(const char *s, char c)
 	return (count);
 }
 
-static char	*find_next_word(char *s, char c, int index)
+static char	*find_next_word(char *s, char c, int index, t_arg *args)
 {
 	int	i;
 	int	j;
@@ -64,10 +65,10 @@ static char	*find_next_word(char *s, char c, int index)
 		count++;
 		j++;
 	}
-	return (ft_substr(&s[i], 0, count));
+	return (ft_substr(&s[i], 0, count, args));
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c, t_arg *args)
 {
 	char	**str;
 	int		i;
@@ -80,9 +81,9 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (++i < count_words(s, c))
 	{
-		str[i] = find_next_word((char *)s, c, i + 1);
+		str[i] = find_next_word((char *)s, c, i + 1, args);
 		if (!str[i])
-			return (ft_free(i, str));
+			return (ft_free(i, str, args));
 	}
 	str[i] = 0;
 	return (str);

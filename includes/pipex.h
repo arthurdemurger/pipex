@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 16:51:52 by ademurge          #+#    #+#             */
-/*   Updated: 2022/06/23 16:53:33 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/06/23 19:06:47 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@
 */
 
 # define CHILD 0
-# define DUP2_ERROR "Dup2 "
-# define PIPE_ERROR "Pipe "
-# define FORK_ERROR "Fork "
-# define OPEN_ERROR "Open "
+# define DUP2_ERROR "Dup2 error "
+# define PIPE_ERROR "Pipe error "
+# define FORK_ERROR "Fork error "
+# define OPEN_ERROR "Open error "
 
 /*
 ** Structure
@@ -71,6 +71,7 @@ void	parse(t_arg *args);
 */
 
 char	**ft_split(char const *s, char c, t_arg *args);
+int		ft_strcmp(char *s1, char *s2);
 char	*ft_strdup(char *src, t_arg *arg);
 char	*ft_strjoin(char const *s1, char const *s2, t_arg *args);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);

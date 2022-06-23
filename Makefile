@@ -6,7 +6,7 @@
 #    By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/18 22:21:01 by ademurge          #+#    #+#              #
-#    Updated: 2022/05/12 16:39:29 by ademurge         ###   ########.fr        #
+#    Updated: 2022/06/23 18:40:50 by ademurge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS			= 	srcs/error.c \
 					srcs/pipex.c
 
 LIBFT			=	libft/ft_split.c \
+					libft/ft_strcmp.c \
 					libft/ft_strdup.c \
 					libft/ft_strjoin.c \
 					libft/ft_strlcat.c \

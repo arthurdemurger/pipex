@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 17:06:27 by ademurge          #+#    #+#             */
-/*   Updated: 2022/06/23 19:03:17 by ademurge         ###   ########.fr       */
+/*   Created: 2022/06/23 18:39:46 by ademurge          #+#    #+#             */
+/*   Updated: 2022/06/23 18:40:26 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
-
-void	ft_error(char *type, int is_perror, t_arg *args)
+int	ft_strcmp(char *s1, char *s2)
 {
-	if (args)
-		ft_free(args);
-	if (type && is_perror)
-		perror(type);
-	else if (type)
-		write (1, type, ft_strlen(type));
-	exit(EXIT_FAILURE);
+	int	i;
+
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }

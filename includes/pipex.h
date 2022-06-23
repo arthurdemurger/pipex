@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 16:51:52 by ademurge          #+#    #+#             */
-/*   Updated: 2022/05/12 16:17:52 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/06/23 16:53:33 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ typedef struct s_arg
 	int		fd_1;
 	int		fd_2;
 	int		pipe[2];
-	pid_t	pid;
 	char	**split_path;
 }	t_arg;
 
@@ -60,8 +59,8 @@ typedef struct s_arg
 ** Useful functions
 */
 
-void	pipex_error(char *type, int is_perror, t_arg *args);
-void	pipex_free(t_arg *args);
+void	ft_error(char *type, int is_perror, t_arg *args);
+void	ft_free(t_arg *args);
 void	init_struct(t_arg *args, char **av, char **envp);
 void	first_cmd(t_arg *args);
 void	second_cmd(t_arg *args);

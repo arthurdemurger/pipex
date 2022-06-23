@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 18:22:47 by ademurge          #+#    #+#             */
-/*   Updated: 2022/05/12 16:19:00 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/06/23 15:40:42 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len, t_arg *args)
 	src = (char *)s;
 	str = (char *)malloc(sizeof(char) * (size + 1));
 	if (!str)
-		pipex_error("Malloc error", 0, args);
+		ft_error("Malloc error", 0, args);
 	ft_strlcpy(str, &src[start], size + 1);
 	return (str);
 }

@@ -6,13 +6,13 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 12:41:49 by ademurge          #+#    #+#             */
-/*   Updated: 2022/05/12 16:00:01 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/06/23 15:41:05 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
 
-static void	pipex_free2(t_arg *args)
+static void	ft_free2(t_arg *args)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ static void	pipex_free2(t_arg *args)
 	}
 }
 
-void	pipex_free(t_arg *args)
+void	ft_free(t_arg *args)
 {
 	int	i;
 
@@ -51,5 +51,5 @@ void	pipex_free(t_arg *args)
 			free(args->cmd_2_args[i++]);
 		free(args->cmd_2_args);
 	}
-	pipex_free2(args);
+	ft_free2(args);
 }

@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:23:31 by ademurge          #+#    #+#             */
-/*   Updated: 2022/05/12 16:16:43 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/06/23 15:40:42 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ void	parse(t_arg *args)
 			break ;
 	}
 	if (!line_path)
-		pipex_error("Path not found", 0, args);
+		ft_error("Path not found", 0, args);
 	args->split_path = ft_split(line_path, ':', args);
 }

@@ -6,18 +6,18 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 18:23:28 by ademurge          #+#    #+#             */
-/*   Updated: 2022/05/12 16:18:39 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/06/23 15:41:18 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
 
-static char	**ft_free(int index, char **split, t_arg *args)
+static char	**split_free(int index, char **split, t_arg *args)
 {
 	while (--index)
 		free(split[index]);
 	free(split);
-	pipex_error("Malloc error", 0, args);
+	ft_error("Malloc error", 0, args);
 	return (NULL);
 }
 
@@ -83,7 +83,7 @@ char	**ft_split(char const *s, char c, t_arg *args)
 	{
 		str[i] = find_next_word((char *)s, c, i + 1, args);
 		if (!str[i])
-			return (ft_free(i, str, args));
+			return (split_free(i, str, args));
 	}
 	str[i] = 0;
 	return (str);

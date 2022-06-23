@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:58:42 by ademurge          #+#    #+#             */
-/*   Updated: 2022/06/23 16:54:26 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/06/23 19:28:35 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ int	main(int ac, char **av, char **envp)
 	{
 		init_struct(&args, av, envp);
 		parse(&args);
-		if ((pipe(args.pipe)) == -1)
-			ft_error(PIPE_ERROR, 1, NULL);
 		first_cmd(&args);
 		second_cmd(&args);
 		ft_free(&args);

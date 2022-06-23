@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:02:11 by ademurge          #+#    #+#             */
-/*   Updated: 2022/06/23 19:07:50 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/06/23 19:29:13 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,6 @@ void	init_struct(t_arg *args, char **av, char **envp)
 		free(tmp1);
 	if (ft_strcmp(tmp2, args->cmd_2_args[0]))
 		free(tmp2);
+	if ((pipe(args->pipe)) == -1)
+		ft_error(PIPE_ERROR, 1, NULL);
 }

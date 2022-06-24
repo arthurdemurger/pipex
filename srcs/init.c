@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:02:11 by ademurge          #+#    #+#             */
-/*   Updated: 2022/06/23 19:29:13 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/06/24 14:53:06 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	init_struct(t_arg *args, char **av, char **envp)
 	char	*tmp2;
 
 	args->fd_1 = open(av[1], O_RDONLY);
-	args->fd_2 = open(av[4], O_CREAT | O_RDWR | O_TRUNC, 0644);
+	args->fd_2 = open(av[4], O_CREAT | O_RDWR | O_TRUNC);
 	if (args->fd_1 < 0 || args->fd_2 < 0)
 		ft_error(OPEN_ERROR, 1, NULL);
 	args->cmd_1_args = ft_split(av[2], ' ', args);

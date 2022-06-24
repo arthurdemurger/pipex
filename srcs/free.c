@@ -6,7 +6,7 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 12:41:49 by ademurge          #+#    #+#             */
-/*   Updated: 2022/06/23 15:41:05 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/06/24 15:08:36 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ static void	ft_free2(t_arg *args)
 			free(args->split_path[i++]);
 		free(args->split_path);
 	}
+	close(args->fd_1);
+	close(args->fd_2);
 }
 
 void	ft_free(t_arg *args)

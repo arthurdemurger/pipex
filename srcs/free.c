@@ -6,11 +6,11 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 12:41:49 by ademurge          #+#    #+#             */
-/*   Updated: 2022/06/24 15:08:36 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/06/24 15:38:41 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "../inc/pipex.h"
 
 static void	ft_free2(t_arg *args)
 {

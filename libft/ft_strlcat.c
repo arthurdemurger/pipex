@@ -6,11 +6,11 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 18:10:06 by ademurge          #+#    #+#             */
-/*   Updated: 2022/05/11 18:31:58 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/06/24 15:38:41 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "../inc/pipex.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {

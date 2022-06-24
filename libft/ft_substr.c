@@ -6,11 +6,11 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 18:22:47 by ademurge          #+#    #+#             */
-/*   Updated: 2022/06/23 15:40:42 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/06/24 15:38:41 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "../inc/pipex.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len, t_arg *args)
 {

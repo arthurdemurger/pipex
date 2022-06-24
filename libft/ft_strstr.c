@@ -6,11 +6,11 @@
 /*   By: ademurge <ademurge@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:46:59 by ademurge          #+#    #+#             */
-/*   Updated: 2022/05/12 16:00:47 by ademurge         ###   ########.fr       */
+/*   Updated: 2022/06/24 15:38:41 by ademurge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/pipex.h"
+#include "../inc/pipex.h"
 
 static int	ft_is_equal(char *str, char *to_find)
 {
